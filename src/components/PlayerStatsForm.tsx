@@ -31,6 +31,8 @@ const PlayerStatsForm: React.FC<PlayerStatsFormProps> = ({
   onChange,
   playerName,
 }) => {
+  const numberOptions = Array.from({ length: 101 }, (_, i) => i);
+
   return (
     <div className="bg-white shadow rounded-lg p-4">
       <h3 className="text-xl font-semibold mb-4">Player Stats - {playerName}</h3>
@@ -42,18 +44,19 @@ const PlayerStatsForm: React.FC<PlayerStatsFormProps> = ({
               <label className="block text-xs font-medium capitalize">
                 {field.replace(/_/g, " ")}
               </label>
-              <input
-                type="number"
-                min="0"
+              <select
                 value={stats[field as keyof PlayerStats] ?? 0}
                 onChange={(e) =>
-                  onChange(
-                    field as keyof PlayerStats,
-                    parseInt(e.target.value) || 0
-                  )
+                  onChange(field as keyof PlayerStats, parseInt(e.target.value))
                 }
                 className="block w-full p-1 text-xs border rounded"
-              />
+              >
+                {numberOptions.map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
+                ))}
+              </select>
             </div>
           ))}
       </div>
