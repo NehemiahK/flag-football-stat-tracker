@@ -10,6 +10,7 @@ import TeamSelection from "./pages/TeamSelection";
 import TeamPage from "./pages/TeamPage";
 import GamePage from "./pages/GamePage";
 import SimpleLogin from "./components/SimpleLogin";
+import BackButton from "./components/BackButton";
 
 const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
   const [user, setUser] = useState<any>(null);
@@ -47,6 +48,8 @@ function App() {
         <h1 className="text-3xl font-bold text-center mb-6">
           Football Stats Tracker
         </h1>
+
+        <BackButton />
 
         <Routes>
           <Route path="/" element={<TeamSelection />} />
