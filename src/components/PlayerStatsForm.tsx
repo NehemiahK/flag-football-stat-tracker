@@ -9,6 +9,7 @@ interface PlayerStats {
   pass_attempts: number;
   pass_completions: number;
   tds_thrown: number;
+  tds_rush: number;
   ints_thrown: number;
   receptions: number;
   interceptions: number;

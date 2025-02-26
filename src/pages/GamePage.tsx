@@ -14,6 +14,7 @@ const defaultStats: Omit<
   pass_attempts: 0,
   pass_completions: 0,
   tds_thrown: 0,
+  tds_rush: 0,
   ints_thrown: 0,
   receptions: 0,
   interceptions: 0,
